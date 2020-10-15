@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Barang</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="presentAlert()"><ion-icon name="trash" slot="icon-only"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>  
+        <ion-item>
+          <ion-label position="floating"> Model </ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedModel']"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating"> Harga </ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedHarga']"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating"> Stok </ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedStok']"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="loadedEditedHome.jenis === 'CPU'">
+          <ion-label position="floating">Base Clock</ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedBaseclock']"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="loadedEditedHome.jenis === 'CPU'">
+          <ion-label position="floating">Boost Clock</ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedBoostclock']"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="loadedEditedHome.jenis === 'CPU'">
+          <ion-label position="floating">Jumlah Core</ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedCore']"></ion-input>
+        </ion-item>
+    
+        <ion-item *ngIf="loadedEditedHome.jenis === 'CPU'">
+          <ion-label position="floating">Thread</ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedThread']"></ion-input>
+        </ion-item>
+    
+        <ion-item *ngIf="loadedEditedHome.jenis === 'RAM'">
+          <ion-label position="floating">Speed</ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedSpeed']"></ion-input>
+        </ion-item>
+    
+        <ion-item *ngIf="loadedEditedHome.jenis === 'RAM'">
+          <ion-label position="floating">Ukuran</ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedUkuran']"></ion-input>
+        </ion-item>
+    
+        <ion-item *ngIf="loadedEditedHome.jenis === 'Motherboard'">
+          <ion-label position="floating">Chipset</ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedChipset'] "></ion-input>
+        </ion-item>
+    
+        <ion-item *ngIf="loadedEditedHome.jenis === 'Motherboard'">
+          <ion-label position="floating">Processor</ion-label>
+          <ion-input  type="text" [(ngModel)]="productEdit['editedProcessor']"></ion-input>
+        </ion-item>
+          <ion-button (click)="editHome()">Edit</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

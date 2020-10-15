@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{loadedHome.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col><ion-img [src]="loadedHome.imageUrl"></ion-img></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>  
+        <ion-item *ngIf="loadedHome.title !=null">
+          <ion-label >Nama Barang : {{loadedHome.title}}</ion-label>          
+        </ion-item>
+        <ion-item *ngIf="loadedHome.harga !=null">
+          <ion-label >Harga : {{loadedHome.harga}}</ion-label>          
+        </ion-item>
+        <ion-item *ngIf="loadedHome.stok !=null">
+          <ion-label >Stock : {{loadedHome.stok}}</ion-label>          
+        </ion-item>
+        <ion-item *ngIf="loadedHome.model !=null">
+          <ion-label >Model : {{loadedHome.model}}</ion-label>          
+        </ion-item>
+        <ion-item *ngIf="loadedHome.merek !=null">
+          <ion-label >Merek : {{loadedHome.merek}}</ion-label>          
+        </ion-item>
+        <ion-item *ngIf="loadedHome.baseclock !=null">
+          <ion-label >Base Clock : {{loadedHome.baseclock}}</ion-label>          
+        </ion-item>
+        <ion-item *ngIf="loadedHome.boostclock !=null">
+          <ion-label >Boost Clock : {{loadedHome.boostclock}}</ion-label>          
+        </ion-item>
+        <ion-item *ngIf="loadedHome.core !=null">
+          <ion-label >Jumlah Core : {{loadedHome.core}}</ion-label>          
+        </ion-item>
+        <ion-item *ngIf="loadedHome.thread !=null">
+          <ion-label >Thread : {{loadedHome.thread}}</ion-label>          
+        </ion-item>
+        <ion-item *ngIf="loadedHome.speed !=null">
+          <ion-label >Speed : {{loadedHome.speed}}</ion-label>          
+        </ion-item>
+        <ion-item *ngIf="loadedHome.ukuran !=null">
+          <ion-label >Ukuran : {{loadedHome.ukuran}}</ion-label>          
+        </ion-item>
+        <ion-item *ngIf="loadedHome.chipset !=null">
+          <ion-label >Chipset : {{loadedHome.chipset}}</ion-label>          
+        </ion-item>       
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+

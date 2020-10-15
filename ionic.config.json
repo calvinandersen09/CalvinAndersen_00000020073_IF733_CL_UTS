@@ -1,0 +1,7 @@
+{
+  "name": "UTS_00000020073_CalvinAndersen",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

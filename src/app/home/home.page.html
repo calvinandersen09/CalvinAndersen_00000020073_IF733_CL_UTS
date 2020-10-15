@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-button slot="end" (click)="functiongrid()" fill="none">
+      <ion-icon [name]="grid ? 'list-outline' : 'grid-outline'"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+      <ion-row *ngIf="grid">
+        <ion-col size="12" size-md="12" size-sm="12">
+          <ion-item *ngFor="let home of homes" [routerLink]="['./',home.id]">
+            <ion-avatar slot="start">
+             <ion-img [src]="home.imageUrl"></ion-img>
+            </ion-avatar>
+            <ion-label>
+              Barang : {{home.title}}
+              <br>
+              Harga  : Rp. {{home.harga}}
+              <br>
+              Stock  : {{home.stok}}
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="!grid">
+        <ion-col *ngFor="let home of homes" size="6" size-md="6" size-sm="6" >
+          <ion-item  [routerLink]="['./',home.id]">
+            <ion-avatar slot="start">
+             <ion-img [src]="home.imageUrl"></ion-img>
+            </ion-avatar>
+            <ion-label>
+              Barang : {{home.title}}
+              <br>
+              Harga  : Rp. {{home.harga}}
+              <br>
+              Stock  : {{home.stok}}
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid> 
+  </ion-content>
